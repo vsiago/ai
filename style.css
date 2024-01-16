@@ -15,7 +15,6 @@ h1 {
 }
 
 video {
-    background-color: red;
     width: 100vw;
     height: 100vh;
     object-fit: cover;
@@ -29,8 +28,12 @@ section {
 
 #webcamButton {
     width: 200px;
-    height: 100px;
-    background-color: violet;
+    height: 80px;
+    background-color: yellowgreen;
+    color: white;
+    position: absolute;
+    border: none;
+    border-radius: 50;
 }
 
 .removed {
@@ -45,6 +48,9 @@ section {
     position: relative;
     width: calc(100% - 20px);
     cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .camView p {
