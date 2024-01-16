@@ -9,8 +9,8 @@ h1 {
 
 video {
     display: block;
-    width: 100vw;
-    height: 100vh;
+    width: 100%;
+    height: 100%;
     position: absolute;
     left: 0;
     top: 0;
@@ -33,8 +33,9 @@ section {
     position: relative;
     width: 100vw;
     height: 100vh;
-    margin: 10px;
-    cursor: pointer;
+    position: absolute;
+    left: 0;
+    top: 0;
 }
 
 .camView p {
