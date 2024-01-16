@@ -1,6 +1,11 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
 body {
     font-family: helvetica, arial, sans-serif;
-    margin: 2em;
     color: #3D3D3D;
 }
 
@@ -10,6 +15,10 @@ h1 {
 }
 
 video {
+    background-color: red;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
     display: block;
 }
 
@@ -35,13 +44,11 @@ section {
 .camView {
     position: relative;
     width: calc(100% - 20px);
-    margin: 10px;
     cursor: pointer;
 }
 
 .camView p {
     position: absolute;
-    padding: 5px;
     background-color: rgba(255, 111, 0, 0.85);
     color: #FFF;
     border: 1px dashed rgba(255, 255, 255, 0.7);
