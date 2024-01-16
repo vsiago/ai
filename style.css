@@ -32,8 +32,8 @@ section {
     background-color: yellowgreen;
     color: white;
     position: absolute;
-    border: none;
     border-radius: 50;
+    position: absolute;
 }
 
 .removed {
