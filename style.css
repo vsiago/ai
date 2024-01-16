@@ -49,6 +49,7 @@ section {
 .camView {
     position: relative;
     width: calc(100% - 20px);
+    height: 100vh;
     cursor: pointer;
     display: flex;
     justify-content: center;
