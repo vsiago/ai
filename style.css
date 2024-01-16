@@ -16,6 +16,11 @@ video {
     top: 0;
 }
 
+#demos {
+    width: 100vw;
+    height: 100%;
+}
+
 section {
     opacity: 1;
     transition: opacity 500ms ease-in-out;
@@ -31,11 +36,9 @@ section {
 
 .camView {
     position: relative;
-    width: 100vw;
-    height: 100vh;
-    position: absolute;
-    left: 0;
-    top: 0;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
 }
 
 .camView p {
