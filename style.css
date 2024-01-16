@@ -1,5 +1,7 @@
 body {
     font-family: helvetica, arial, sans-serif;
+    margin: 2em;
+    color: #3D3D3D;
 }
 
 h1 {
@@ -9,16 +11,6 @@ h1 {
 
 video {
     display: block;
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    left: 0;
-    top: 0;
-}
-
-#demos {
-    width: 100vw;
-    height: 100%;
 }
 
 section {
@@ -42,8 +34,8 @@ section {
 
 .camView {
     position: relative;
-    width: 100%;
-    height: 100%;
+    width: calc(100% - 20px);
+    margin: 10px;
     cursor: pointer;
 }
 
