@@ -32,6 +32,14 @@ function enableCam(event) {
     const constraints = {
       video: true
     };
+
+        // Verificação de dispositivo móvel
+        if (window.innerWidth <= 768) {
+            constraints.video = {
+                width: { ideal: window.innerWidth },
+                height: { ideal: window.innerHeight }
+            };
+        }
   
     // Ative o fluxo da webcam
     navigator.mediaDevices.getUserMedia(constraints).then(function(stream) {
@@ -39,6 +47,17 @@ function enableCam(event) {
       video.addEventListener('loadeddata', predictWebcam);
     });
   }
+
+  // Após a definição da função enableCam
+window.addEventListener('resize', function () {
+    if (window.innerWidth <= 768) {
+        video.style.width = window.innerWidth + 'px';
+        video.style.height = window.innerHeight + 'px';
+    } else {
+        video.style.width = '100vw';
+        video.style.height = '100vh';
+    }
+});
 
 
 // Finja que o modelo foi carregado para que possamos testar o código da webcam.
