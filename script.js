@@ -3,38 +3,37 @@ const liveView = document.getElementById('liveView');
 const demosSection = document.getElementById('demos');
 const enableWebcamButton = document.getElementById('webcamButton');
 
-// Check if webcam access is supported.
+// Verifica se o acesso à webcam é suportado
 function getUserMediaSupported() {
     return !!(navigator.mediaDevices &&
       navigator.mediaDevices.getUserMedia);
   }
   
-// If webcam supported, add event listener to button for when user
-// wants to activate it to call enableCam function which we will 
-// define in the next step.
+  // Se houver suporte para webcam, adicione ouvinte de evento ao botão para quando o usuário
+  // deseja ativá-lo para chamar a função enableCam que iremos
+  // defina na próxima etapa.
   if (getUserMediaSupported()) {
     enableWebcamButton.addEventListener('click', enableCam);
   } else {
     console.warn('getUserMedia() is not supported by your browser');
   }
   
-// Placeholder function for next step. Paste over this in the next step.
-// Enable the live webcam view and start classification.
+// Habilite a visualização da webcam ao vivo e inicie a classificação.
 function enableCam(event) {
-// Only continue if the COCO-SSD has finished loading.
+// Continue apenas se o COCO-SSD terminar de carregar.
     if (!model) {
       return;
     }
     
-    // Hide the button once clicked.
+    // Oculta o botão uma vez clicado.
     event.target.classList.add('removed');  
     
-    // getUsermedia parameters to force video but not audio.
+    // parâmetros getUsermedia para forçar vídeo, mas não áudio.
     const constraints = {
       video: true
     };
   
-    // Activate the webcam stream.
+    // Ative o fluxo da webcam
     navigator.mediaDevices.getUserMedia(constraints).then(function(stream) {
       video.srcObject = stream;
       video.addEventListener('loadeddata', predictWebcam);
@@ -42,21 +41,21 @@ function enableCam(event) {
   }
 
 
-// Pretend model has loaded so we can try out the webcam code.
+// Finja que o modelo foi carregado para que possamos testar o código da webcam.
 var model = true;
 demosSection.classList.remove('invisible');
 
-// Store the resulting model in the global scope of our app.
+// Armazene o modelo resultante no escopo global do nosso aplicativo.
 var model = undefined;
 
-// Before we can use COCO-SSD class we must wait for it to finish
-// loading. Machine Learning models can be large and take a moment 
-// to get everything needed to run.
-// Note: cocoSsd is an external object loaded from our index.html
-// script tag import so ignore any warning in Glitch.
+// Antes de podermos usar a classe COCO-SSD devemos esperar que ela termine
+// carregando. Os modelos de aprendizado de máquina podem ser grandes e demorar um pouco
+// para obter tudo o que é necessário para funcionar.
+// Nota: cocoSsd é um objeto externo carregado de nosso index.html
+// importação de tag de script, então ignore qualquer aviso no Glitch.
 cocoSsd.load().then(function (loadedModel) {
   model = loadedModel;
-  // Show demo section now model is ready to use.
+  // Mostre a seção de demonstração agora que o modelo está pronto para uso.
   demosSection.classList.remove('invisible');
 });
 
@@ -64,18 +63,18 @@ cocoSsd.load().then(function (loadedModel) {
 var children = [];
 
 function predictWebcam() {
-  // Now let's start classifying a frame in the stream.
+  // Agora vamos começar a classificar um quadro no stream
   model.detect(video).then(function (predictions) {
-    // Remove any highlighting we did previous frame.
+    // Remova qualquer destaque que fizemos no quadro anterior.
     for (let i = 0; i < children.length; i++) {
       liveView.removeChild(children[i]);
     }
     children.splice(0);
     
-    // Now lets loop through predictions and draw them to the live view if
-    // they have a high confidence score.
+    // Agora vamos percorrer as previsões e desenhá-las para a visualização ao vivo se
+    // eles têm uma pontuação de confiança alta.
     for (let n = 0; n < predictions.length; n++) {
-      // If we are over 66% sure we are sure we classified it right, draw it!
+      // Se tivermos mais de 66% de certeza de que classificamos corretamente, desenhe!
       if (predictions[n].score > 0.66) {
         const p = document.createElement('p');
         p.innerText = predictions[n].class  + ' - with ' 
@@ -99,7 +98,7 @@ function predictWebcam() {
       }
     }
     
-    // Call this function again to keep predicting when the browser is ready.
+    // Chame essa função novamente para continuar prevendo quando o navegador estiver pronto.
     window.requestAnimationFrame(predictWebcam);
   });
 }
