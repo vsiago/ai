@@ -51,8 +51,8 @@ body {
     position: absolute;
   }
   #webcamButton {
-    width: 300px;
-    height: 100px;
+    width: 100vw;
+    height: 100vh;
     background-color: blueviolet;
   }
   #webcamButton:active {
