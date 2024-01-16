@@ -48,16 +48,6 @@ function enableCam(event) {
     });
   }
 
-  // Após a definição da função enableCam
-window.addEventListener('resize', function () {
-    if (window.innerWidth <= 768) {
-        video.style.width = window.innerWidth + 'px';
-        video.style.height = window.innerHeight + 'px';
-    } else {
-        video.style.width = '100vw';
-        video.style.height = '100vh';
-    }
-});
 
 
 // Finja que o modelo foi carregado para que possamos testar o código da webcam.
