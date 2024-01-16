@@ -43,8 +43,9 @@ section {
 
 .camView {
     position: relative;
-    width: calc(100% - 20px);
+    width: calc(100vw - 20px);
     cursor: pointer;
+    background-color: #FF6F00;
 }
 
 .camView p {
