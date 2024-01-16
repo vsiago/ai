@@ -26,6 +26,12 @@ section {
     transition: opacity 500ms ease-in-out;
 }
 
+#webcamButton {
+    width: 200px;
+    height: 100px;
+    background-color: violet;
+}
+
 .removed {
     display: none;
 }
