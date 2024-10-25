@@ -596,6 +596,9 @@
         <mxCell id="1jAVJrhePYpuvby0Juwp-224" value="/api/user/login" style="text;strokeColor=none;align=center;fillColor=none;html=1;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
           <mxGeometry x="-1050" y="1803" width="60" height="17" as="geometry" />
         </mxCell>
+        <mxCell id="1jAVJrhePYpuvby0Juwp-225" value="Fluxo de tomada de decisão de dados&lt;div&gt;&lt;font style=&quot;font-size: 16px;&quot;&gt;Usuário Comum X Usuáio Biscateiro&lt;/font&gt;&lt;/div&gt;" style="text;strokeColor=none;align=center;fillColor=none;html=1;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=20;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="-1370" y="1620" width="1200" height="30" as="geometry" />
+        </mxCell>
       </root>
     </mxGraphModel>
   </diagram>
