@@ -608,6 +608,9 @@
         <mxCell id="1jAVJrhePYpuvby0Juwp-228" value="/upgrade-to-biscateiro/:userId" style="text;strokeColor=none;align=center;fillColor=none;html=1;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
           <mxGeometry x="-940" y="1902" width="170" height="17" as="geometry" />
         </mxCell>
+        <mxCell id="1jAVJrhePYpuvby0Juwp-229" value="/api/service/create" style="text;strokeColor=none;align=center;fillColor=none;html=1;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="-760" y="1902" width="120" height="17" as="geometry" />
+        </mxCell>
       </root>
     </mxGraphModel>
   </diagram>
